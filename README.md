@@ -37,7 +37,7 @@ python3 -m pip install --user -r requirements.txt
 ### 5. Create ROS 2 workspace
 ```
 mkdir -p ~/ros2_ws/src
-rosdep intall -i --from-path src --rosditro humble -y
+rosdep install -i --from-path src --rosditro humble -y
 colcon build --symlink-install
 ```
 
@@ -46,8 +46,10 @@ colcon build --symlink-install
 cd ros2_ws/src
 git clone ...
 cd ..
-colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release
-echo "source ~/ros2_ws/install/setup.bash" >> ~/.bashrc
+sudo apt update
+rosdep install --from-path src --ignore-src -r -y # Install dependencies 
+colcon build --symlink-install --cmake-args=-DCMAKE_BUILD_TYPE=Release --parallel-workers $(nproc)
+echo "source ~/ros2_ws/install/local_setup.bash" >> ~/.bashrc
 source ~/.bashrc
 ```
 
