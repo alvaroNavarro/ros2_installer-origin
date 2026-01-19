@@ -37,8 +37,7 @@ python3 -m pip install --user -r requirements.txt
 ### 5. Create ROS 2 workspace
 ```
 mkdir -p ~/ros2_ws/src
-rosdep install -i --from-path src --rosditro humble -y
-colcon build --symlink-install
+colcon build 
 ```
 
 ### 6. Clone your ROS2 packages into the workspace folder
