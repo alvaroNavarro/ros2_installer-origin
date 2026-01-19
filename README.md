@@ -31,6 +31,7 @@ sudo chmod +x install_packages.sh
 
 ### 4. Install Python dependencies
 ```
+sudo apt install python3-pip
 python3 -m pip install --user -r requirements.txt
 ```
 
