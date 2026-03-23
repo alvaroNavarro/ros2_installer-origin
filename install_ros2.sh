@@ -24,11 +24,11 @@ sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | 
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/trusted.gpg.d/ros.asc] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo "$UBUNTU_CODENAME") main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
 
 # 5. Install ROS Distro full
-sudo apt install ros-humble-desktop
+sudo apt-get install ros-humble-desktop
 
 # 7. rosdep initialization
-sudo rosdep init || true
-rosdep update
+#sudo rosdep init || true
+#rosdep update
 
 # 8. add to the bashrc file
 if ! grep -q "source /opt/ros/humble/setup.bash" ~/.bashrc; then

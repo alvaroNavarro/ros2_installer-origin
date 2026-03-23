@@ -1,7 +1,7 @@
 # requirements.txt
 
 #numpy==1.23.5
-matplotlib
+#matplotlib
 opencv-python
 scipy
 pandas==2.3.3
